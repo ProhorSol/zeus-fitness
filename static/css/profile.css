@@ -1,0 +1,218 @@
+#profile {
+    padding: 100px 0;
+    background: #f5f5f5;
+}
+
+.profile-sidebar {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.profile-info {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-info h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.profile-info p {
+    color: #666;
+    margin-bottom: 0;
+}
+
+.profile-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.profile-nav li {
+    margin-bottom: 10px;
+}
+
+.profile-nav li a {
+    display: block;
+    padding: 12px 20px;
+    color: #666;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.profile-nav li.active a,
+.profile-nav li a:hover {
+    background: #45aed6;
+    color: #fff;
+}
+
+.profile-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.profile-content h4 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f5f5f5;
+}
+
+.training-item,
+.order-item {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.training-item:hover,
+.order-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.training-header,
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.training-header h5,
+.order-header h5 {
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+}
+
+.status {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status.pending {
+    background: #ffeeba;
+    color: #856404;
+}
+
+.status.confirmed {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status.cancelled {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.training-info,
+.order-info {
+    color: #666;
+}
+
+.training-info p,
+.order-info p {
+    margin-bottom: 8px;
+}
+
+.training-info i,
+.order-info i {
+    margin-right: 10px;
+    color: #45aed6;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: 600;
+    color: #45aed6;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.empty-state p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background: #45aed6;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #2a95bf;
+    transform: translateY(-2px);
+}
+
+.training-actions {
+    margin-top: 15px;
+}
+
+.btn-danger {
+    background: #dc3545;
+    border: none;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.btn-danger:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+}
+
+.btn-danger i {
+    margin-right: 5px;
+}
+
+@media (max-width: 991px) {
+    .profile-sidebar {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    #profile {
+        padding: 60px 0;
+    }
+    
+    .profile-content {
+        padding: 20px;
+    }
+    
+    .training-header,
+    .order-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .status,
+    .price {
+        margin-top: 10px;
+    }
+}

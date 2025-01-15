@@ -1,0 +1,493 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="webthemez">
+    <title>Add-Life-Health-Fitness-Free-Bootstrap-HTML5-Template</title>
+	<!-- core CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/prettyPhoto.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <!--[if lt IE 9]>
+    <script src="{% static 'js/html5shiv.js' %}"></script>
+    <script src="{% static 'js/respond.min.js' %}"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="{% static 'images/ico/favicon.ico' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/contact.js' %}"></script>
+</head> 
+
+<body id="home">
+    <header id="header">
+        <nav id="main-nav" class="navbar navbar-default navbar-fixed-top" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
+                </div>
+				
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li class="scroll active"><a href="#home">Главная</a></li>
+                        <li class="scroll"><a href="#about">О нас</a></li>
+                        <li class="scroll"><a href="#services">Услуги</a></li>
+                        <li class="scroll"><a href="#team">Команда</a></li>
+						<li class="scroll"><a href="#portfolio">Галерея</a></li>
+                        <li class="scroll"><a href="#pricing">Абонементы</a></li>
+                        <li class="scroll"><a href="#contact">Обратная связь</a></li>                        
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+    </header><!--/header-->
+
+    <section id="hero-banner">
+             <div class="banner-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                 
+                                    <h2>Новогодняя скидка на абонемент <b>-20%</b></h2>
+                                    <p>Стань частью нашей дружной команды</p>
+                                    <a class="btn btn-primary btn-lg" href="#">КУПИТЬ</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </section><!--/#main-slider-->
+
+ <section id="services" >
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="section-title bg-white text-center text-primary px-3">Услуги</h6>
+                    <h1 class="mb-5">Наши Услуги</h1>
+                </div>
+                <div class="row g-4">
+                    {% for service in services %}
+                    <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item text-center pt-3">
+                            <div class="p-4">
+                                <i class="{{ service.icon }} text-primary mb-4" style="font-size: 36px;"></i>
+                                <h5 class="mb-3">{{ service.title }}</h5>
+                                <p>{{ service.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section><!--/#services-->
+
+  
+ <section id="about">
+        <div class="container">
+
+            <div class="section-header">
+                <h2 class="section-title wow fadeInDown">О нас</h2>
+                
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 wow fadeInLeft">
+                  <img class="img-responsive" src="{% static 'images/about.png' %}" alt="">
+                </div>
+
+                <div class="col-sm-6 wow fadeInRight">
+                    <h3 class="column-title">Фитнес-клуб ZEUS</h3>
+                    <p>сеть технологичных фитнес-клубов с оплатой за месяц в Москве, Санкт-Петербурге и Челябинске. Это не просто клубы, а сообщество единомышленников, для которых физическая активность - норма жизни. Кроме привычного фитнеса, мы устраиваем челленджи и соревнования среди сети, проводим открытые тренировки в центре Москвы и устраиваем сайкл-забеги в торговых центрах. Всё это объединяет людей, неравнодушных к фитнесу.</p>
+<ul class="listarrow">
+<li><i class="fa fa-angle-double-right"></i>Аэробика</li>
+<li><i class="fa fa-angle-double-right"></i>Кардио</li>
+<li><i class="fa fa-angle-double-right"></i>Cycle-тренировки</li>
+<li><i class="fa fa-angle-double-right"></i>GymTime Full Body</li> 
+<li><i class="fa fa-angle-double-right"></i>BootyBlaster</li>
+</ul>
+ 
+
+                </div>
+            </div>
+        </div>
+    </section><!--/#about-->
+
+     <section id="team">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title wow fadeInDown">ТРЕНЕРСКИЙ ШТАБ</h2>
+                <p class="wow fadeInDown">Наши тренера заботятся о вашем здоровье.</p> 
+            </div>
+            
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">
+                        <div class="team-img">
+                            <img src="{% static 'images/team/01.jpg' %}" alt="Тренер" class="img-responsive">
+                        </div>
+                        <div class="team-info">
+                            <h3>Светлана Адушкина</h3>
+                            <span>Тренер</span>
+                        </div>
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="100ms">
+                        <div class="team-img">
+                            <img src="{% static 'images/team/02.jpg' %}" alt="Тренер" class="img-responsive">
+                        </div>
+                        <div class="team-info">
+                            <h3>Артём Конин</h3>
+                            <span>Тренер</span>
+                        </div>
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="200ms">
+                        <div class="team-img">
+                            <img src="{% static 'images/team/02.jpg' %}" alt="Тренер" class="img-responsive">
+                        </div>
+                        <div class="team-info">
+                            <h3>Александр Конин</h3>
+                            <span>Тренер</span>
+                        </div>
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="300ms">
+                        <div class="team-img">
+                            <img src="{% static 'images/team/04.jpg' %}" alt="Тренер" class="img-responsive">
+                        </div>
+                        <div class="team-info">
+                            <h3>Борис Бирков</h3>
+                            <span>Старший тренер</span>
+                        </div>
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!--/#team-->
+
+  <section id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">Галерея</h2>
+                <p class="text-center wow fadeInDown">Фотографии нашего фитнес-клуба, тренировок и мероприятий</p>
+            </div>
+
+            <div class="text-center">
+                <ul class="portfolio-filter">
+                    <li><a class="active" href="#" data-filter="*">Все</a></li>
+                    <li><a href="#" data-filter=".gym">Тренажерный зал</a></li>
+                    <li><a href="#" data-filter=".yoga">Йога</a></li>
+                    <li><a href="#" data-filter=".cardio">Кардио</a></li>
+                    <li><a href="#" data-filter=".group">Групповые занятия</a></li>
+                </ul><!--/#portfolio-filter-->
+            </div>
+
+            <div class="portfolio-items">
+                {% for item in gallery_items %}
+                <div class="portfolio-item {{ item.category }}">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="{{ item.image.url }}" alt="{{ item.title }}">
+                        <div class="portfolio-info">
+                            <h3>{{ item.title }}</h3>
+                            {% if item.description %}
+                            <p>{{ item.description }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div><!--/.container-->
+    </section><!--/#portfolio-->
+
+    <section id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">Абонементы</h2>
+                <p class="text-center wow fadeInDown">Выберите подходящий для вас абонемент и начните тренироваться уже сегодня!</p>
+            </div>
+
+            <div class="row">
+                {% for subscription in subscriptions %}
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="pricing-table featured wow fadeInUp" data-wow-duration="500ms">
+                        <div class="pricing-header">
+                            <h3 class="pricing-title">{{ subscription.name }}</h3>
+                            <div class="price-value">
+                                {{ subscription.price }} ₽
+                                <span class="duration">/{{ subscription.duration }} мес.</span>
+                            </div>
+                        </div>
+                        <div class="pricing-body">
+                            <ul class="pricing-features">
+                                {% for feature in subscription.get_features_list %}
+                                <li><i class="fa fa-check"></i> {{ feature }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="pricing-footer">
+                            <a href="{% url 'order' subscription.id %}" class="btn btn-custom">
+                                <i class="fa fa-shopping-cart"></i> Купить
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section><!--/#pricing-->
+   
+   
+
+    <section id="business-stats">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title wow fadeInDown">Отчет фитнес-клуба "ZEUS" за 2024</h2>
+                <p class="wow fadeInDown">Этот год был значемый как для нас так и для наших клиентов</p>
+            </div>
+
+            <div class="row text-center">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">
+                        <div class="business-stats" data-digit="8000" data-duration="1000"></div>
+                        <strong>Количество клиентов</strong>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="100ms">
+                        <div class="business-stats" data-digit="6666" data-duration="1000"></div>
+                        <strong>Количество проведенных тренировок</strong>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="200ms">
+                        <div class="business-stats" data-digit="4444" data-duration="1000"></div>
+                        <strong>Количество проведенных групповых тренировок</strong>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="300ms">
+                        <div class="business-stats" data-digit="6668" data-duration="1000"></div>
+                        <strong>Количество клиентов выполневших тренерский план</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!--/#business-stats-->
+
+  
+    <section class="testimonial-area" id="testimonial">
+			<div class="container">
+				<div class="section-header">
+                <h2 class="section-title wow fadeInDown">Отзывы</h2>
+            </div>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="single-testimonial animate_fade_in" style="opacity: 1; right: 0px;">
+							<div class="row">
+								<div class="col-xs-12">
+									<blockquote>Отличный зал! Хорошие тренажеры, профессиональная команда тренеров!</blockquote>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-3">
+									<img src="{% static 'images/pic22.jpg' %}" alt="client">
+								</div>
+								<div class="col-xs-9 half-gutter">
+									<h5>Антон</h5>
+									<h6>Ходит в зал более 3 лет</h6>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="single-testimonial animate_fade_in" style="opacity: 1; right: 0px;">
+							<div class="row">
+								<div class="col-xs-12">
+									<blockquote>Новое качественное оборудование, нормальный бассейн и хамам.</blockquote>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-3">
+									<img src="{% static 'images/pic2.jpg' %}" alt="client">
+								</div>
+								<div class="col-xs-9 half-gutter">
+									<h5>Андрей</h5>
+									<h6>Ходит в зал более 5 лет</h6>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="single-testimonial animate_fade_in" style="opacity: 1; right: 0px;">
+							<div class="row">
+								<div class="col-xs-12">
+									<blockquote>Очень хороший клуб. Здравомыслящее руководство. Удобное место. Недешево.</blockquote>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-3">
+									<img src="{% static 'images/pic11.jpg' %}" alt="client">
+								</div>
+								<div class="col-xs-9 half-gutter">
+									<h5>Виктор</h5>
+									<h6>Ходит в зал более 2 лет</h6>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title wow fadeInDown">Обратная связь</h2>
+                <p class="wow fadeInDown">Остались вопросы? Свяжитесь с нами любым удобным способом!</p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="contact-info wow fadeInLeft">
+                        <h3>Наши контакты</h3>
+                        
+                        <div class="info-item">
+                            <i class="fa fa-map-marker"></i>
+                            <div class="info-content">
+                                <h4>Адрес</h4>
+                                <p>ул. Примерная, 123<br>г. Москва, 123456</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fa fa-phone"></i>
+                            <div class="info-content">
+                                <h4>Телефон</h4>
+                                <p>+7 (999) 123-45-67</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fa fa-envelope"></i>
+                            <div class="info-content">
+                                <h4>Email</h4>
+                                <p>info@zeusfitness.com</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fa fa-clock-o"></i>
+                            <div class="info-content">
+                                <h4>Режим работы</h4>
+                                <p>Пн-Пт: 7:00 - 23:00<br>Сб-Вс: 9:00 - 22:00</p>
+                            </div>
+                        </div>
+
+                        <div class="social-links">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-telegram"></i></a>
+                            <a href="#"><i class="fa fa-vk"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <div class="contact-form wow fadeInRight">
+                        <h3>Напишите нам</h3>
+                        <form id="main-contact-form" name="contact-form" method="post" action="{% url 'contact' %}">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="name">Ваше имя</label>
+                                <input type="text" name="name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Телефон</label>
+                                <input type="tel" name="phone" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Сообщение</label>
+                                <textarea name="message" class="form-control" rows="8" required></textarea>
+                            </div>
+                            <button type="submit" class="btn-send">
+                                Отправить сообщение
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!--/#contact-->
+
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2024 Company ZEUS. Template by <a target="_blank" href="" title="Free Bootstrap Themes and HTML Templates"></a>
+                </div>
+                <div class="col-sm-6">
+                    <ul class="social-icons">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li> 
+                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                        <li><a href="#"><i class="fa fa-github"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"> </script>
+    <script src="{% static 'js/mousescroll.js' %}"></script>
+    <script src="{% static 'js/smoothscroll.js' %}"></script>
+    <script src="{% static 'js/jquery.prettyPhoto.js' %}"></script>
+    <script src="{% static 'js/jquery.isotope.min.js' %}"></script>
+    <script src="{% static 'js/jquery.inview.min.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <script src="{% static 'js/custom-scripts.js' %}"></script>
+</body>
+</html>

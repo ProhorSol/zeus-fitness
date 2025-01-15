@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section id="profile" class="section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-sidebar">
+                    <div class="profile-info">
+                        <h3>{{ user.get_full_name|default:user.username }}</h3>
+                        <p>{{ user.email }}</p>
+                    </div>
+                    <ul class="profile-nav">
+                        <li class="active"><a href="#trainings" data-toggle="tab">Мои тренировки</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-md-8">
+                <div class="tab-content">
+                    <!-- Тренировки -->
+                    <div class="tab-pane active" id="trainings">
+                        <div class="profile-content">
+                            <h4>Мои тренировки</h4>
+                            {% if training_sessions %}
+                                {% for session in training_sessions %}
+                                <div class="training-item">
+                                    <div class="training-header">
+                                        <h5>Тренировка с {{ session.trainer.name }}</h5>
+                                        <span class="status {{ session.status }}">{{ session.get_status_display }}</span>
+                                    </div>
+                                    <div class="training-info">
+                                        <p><i class="fa fa-calendar"></i> {{ session.date }}</p>
+                                        <p><i class="fa fa-clock-o"></i> {{ session.time }}</p>
+                                        {% if session.status == 'pending' or session.status == 'confirmed' %}
+                                            {% if session.date >= today %}
+                                            <div class="training-actions">
+                                                <a href="{% url 'cancel_training' session.id %}" class="btn btn-danger btn-sm" 
+                                                   onclick="return confirm('Вы уверены, что хотите отменить тренировку?')">
+                                                    <i class="fa fa-times"></i> Отменить тренировку
+                                                </a>
+                                            </div>
+                                            {% endif %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            {% else %}
+                                <div class="empty-state">
+                                    <p>У вас пока нет записей на тренировки</p>
+                                    <a href="{% url 'home' %}#team" class="btn btn-primary">Записаться на тренировку</a>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+$(document).ready(function() {
+    // Обработка переключения табов
+    $('.profile-nav li a').click(function(e) {
+        e.preventDefault();
+        $('.profile-nav li').removeClass('active');
+        $(this).parent().addClass('active');
+    });
+});
+</script>
+{% endblock %}

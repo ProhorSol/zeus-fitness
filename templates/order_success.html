@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section id="order-success" class="section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <div class="success-message">
+                    <i class="fa fa-check-circle"></i>
+                    <h2>Спасибо за заказ!</h2>
+                    <p>Мы получили вашу заявку и свяжемся с вами в ближайшее время для подтверждения.</p>
+                    <div class="buttons">
+                        <a href="{% url 'home' %}" class="btn btn-primary">Вернуться на главную</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    #order-success {
+        padding: 120px 0 80px;
+        background: #f8f9fa;
+    }
+
+    .success-message {
+        background: #fff;
+        padding: 50px;
+        border-radius: 8px;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    }
+
+    .success-message i {
+        font-size: 80px;
+        color: #28a745;
+        margin-bottom: 20px;
+    }
+
+    .success-message h2 {
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .success-message p {
+        color: #666;
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+    .buttons {
+        margin-top: 30px;
+    }
+
+    .btn-primary {
+        background: #F9690E;
+        border: none;
+        padding: 12px 30px;
+        font-size: 16px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        background: #CD4F00;
+        transform: translateY(-2px);
+    }
+</style>
+{% endblock %}

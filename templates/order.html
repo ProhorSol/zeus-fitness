@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section id="order" class="section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="order-form">
+                    <h2>Оформление заказа</h2>
+                    
+                    <div class="subscription-details">
+                        <h3>{{ subscription.name }}</h3>
+                        <p class="price">{{ subscription.price }} ₽</p>
+                        <p class="duration">Длительность: {{ subscription.duration }} мес.</p>
+                        <div class="features">
+                            <h4>Включено в абонемент:</h4>
+                            <ul>
+                                {% for feature in subscription.get_features_list %}
+                                    <li><i class="fa fa-check"></i> {{ feature }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+
+                    <form method="post" id="order-form">
+                        {% csrf_token %}
+                        {% if form.errors %}
+                            <div class="alert alert-danger">
+                                Пожалуйста, исправьте ошибки в форме.
+                            </div>
+                        {% endif %}
+                        
+                        {% for field in form %}
+                            <div class="form-group {% if field.errors %}has-error{% endif %}">
+                                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                {{ field }}
+                                {% if field.errors %}
+                                    <span class="help-block">{{ field.errors.0 }}</span>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+
+                        <div class="payment-methods">
+                            <h4>Способ оплаты</h4>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="payment_method" value="card" checked>
+                                    Банковская карта
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg">Перейти к оплате</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
